@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FiltersComponentComponent } from './filters-component/filters-component.component';
-import { DonutComponentComponent } from './donut-component/donut-component.component';
-import { TableComponentComponent } from './table-component/table-component.component';
+import { FiltersComponent } from './filters/filters.component';
+import { DonutComponent } from './donut/donut.component';
+import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FiltersComponentComponent,
-    DonutComponentComponent,
-    TableComponentComponent
+    FiltersComponent,
+    DonutComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
