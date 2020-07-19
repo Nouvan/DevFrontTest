@@ -21,6 +21,7 @@ export class FilterService {
   }
 
   getCountriesByContinent(continent: string) {
+    if (continent === "ALL") return this.allCountries;
     return _.filter(this.allCountries, { continent: continent });
   }
 
