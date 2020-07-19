@@ -10,6 +10,7 @@ import { DonutComponent } from "./donut/donut.component";
 import { DataTableComponent } from "./data-table/data-table.component";
 
 import { MatSelectModule } from "@angular/material/select";
+import { HighchartsChartModule } from "highcharts-angular";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatSelectModule } from "@angular/material/select";
     BrowserAnimationsModule,
     HttpClientModule,
     MatSelectModule,
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

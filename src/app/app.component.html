@@ -9,4 +9,25 @@
     [disabled]="disabled"
     (onChanges)="updateFilters($event)"
   ></app-filters>
+
+  <div class="row text-center" *ngIf="!disabled">
+    <div class="col">
+      <app-donut
+        [countries]="countries"
+        [title]="'Population'"
+        [type]="'population'"
+        [resultNB]="filters.resultsNB"
+      >
+      </app-donut>
+    </div>
+    <div class="col">
+      <app-donut
+        [countries]="countries"
+        [title]="'Surface'"
+        [type]="'areaInSqKm'"
+        [resultNB]="filters.resultsNB"
+      >
+      </app-donut>
+    </div>
+  </div>
 </div>

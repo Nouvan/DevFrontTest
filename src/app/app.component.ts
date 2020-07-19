@@ -9,15 +9,23 @@ import { Filter } from "./filters/filters.interface";
 })
 export class AppComponent {
   title = "HomaGamesFrontTest";
-  filter: Filter;
   disabled: boolean = true;
+  filters: Filter = {
+    continent: "ALL",
+    metric: "ALL",
+    resultsNB: 5,
+  };
+
+  countries = [];
+
   constructor(private filterService: FilterService) {}
 
   ngOnInit() {}
 
   public initFilters() {
-    this.filterService.getCountryInfos(this.filter).subscribe((data) => {
-      this.filterService.setContinentList(data.geonames);
+    this.filterService.getCountryInfos(this.filters).subscribe((data) => {
+      this.countries = data.geonames;
+      this.filterService.setContinentList(this.countries);
       this.disabled = false;
     });
   }
@@ -25,7 +33,10 @@ export class AppComponent {
   /**
    *
    */
-  public updateFilters(filter: Filter) {
-    this.filterService.getCountryInfos(filter).subscribe();
+  public updateFilters(filters: Filter) {
+    this.filters = filters;
+    this.filterService.getCountryInfos(this.filters).subscribe((data) => {
+      console.log(data);
+    });
   }
 }

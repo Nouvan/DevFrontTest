@@ -16,7 +16,6 @@ export class FilterService {
   constructor(private http: HttpClient) {}
 
   getCountryInfos(filter: Filter): Observable<any> {
-    console.log(filter);
     return this.http.get<any>(this.geonamesAPI);
   }
 

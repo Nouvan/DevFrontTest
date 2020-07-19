@@ -48,7 +48,6 @@ export class FiltersComponent implements OnInit {
    * Emit on any filters changes
    */
   public onFilterChange() {
-    console.log("test");
     this.onChanges.emit(this.filters);
   }
 }
