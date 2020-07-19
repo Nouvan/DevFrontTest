@@ -22,6 +22,9 @@ export class AppComponent {
 
   ngOnInit() {}
 
+  /**
+   * Initialize the filter when the user click on the Go button
+   */
   public initFilters() {
     this.filterService.getCountryInfos().subscribe((data) => {
       this.countries = data.geonames;
@@ -38,7 +41,7 @@ export class AppComponent {
   }
 
   /**
-   *
+   * Get the list of countries by continent
    */
   public getCountriesByContinent(filters: Filter) {
     this.filters = filters;

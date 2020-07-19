@@ -11,6 +11,9 @@ import { DataTableComponent } from "./data-table/data-table.component";
 
 import { MatSelectModule } from "@angular/material/select";
 import { HighchartsChartModule } from "highcharts-angular";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { HighchartsChartModule } from "highcharts-angular";
     BrowserAnimationsModule,
     HttpClientModule,
     MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
     HighchartsChartModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -17,7 +17,7 @@
     (selectedContinent)="getCountriesByContinent($event)"
   ></app-filters>
 
-  <div class="row justify-content-center text-center" *ngIf="!disabled">
+  <div class="row mb-3 justify-content-center text-center" *ngIf="!disabled">
     <div
       class="col-6"
       *ngIf="filters.metric === 'ALL' || filters.metric === 'population'"
@@ -41,6 +41,14 @@
         [resultNB]="filters.resultsNB"
       >
       </app-donut>
+    </div>
+  </div>
+  <div class="row mb-3" *ngIf="!disabled">
+    <div class="col">
+      <app-data-table
+        [countries]="countries"
+        [metric]="filters.metric"
+      ></app-data-table>
     </div>
   </div>
 </div>

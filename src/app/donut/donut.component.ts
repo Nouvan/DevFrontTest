@@ -24,7 +24,6 @@ export class DonutComponent implements OnInit {
   public _resultNB: number;
   @Input()
   set resultNB(resultNB) {
-    console.log(resultNB);
     this._resultNB = resultNB;
     this.setChartData(this._countries);
   }
