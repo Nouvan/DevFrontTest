@@ -75,6 +75,7 @@ export class DonutComponent implements OnInit {
         })
       );
     }
+
     this.chartOptions.series = [{ data: chartData }];
 
     this.update = true;

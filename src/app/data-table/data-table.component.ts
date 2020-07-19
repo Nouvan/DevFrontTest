@@ -18,6 +18,8 @@ export class DataTableComponent implements OnInit {
   set countries(countries) {
     this._countries = countries;
     this.dataSource = new MatTableDataSource(countries);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   public _metric: string;
