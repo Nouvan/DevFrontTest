@@ -66,13 +66,15 @@ export class DonutComponent implements OnInit {
       .value();
 
     let chartData = sortedCountries.splice(0, this.resultNB);
-    chartData.push(
-      sortedCountries.reduce((acc, res) => {
-        let test = this.getChartData("Other", acc.y + res.y);
-        return test;
-      })
-    );
 
+    if (sortedCountries.length) {
+      chartData.push(
+        sortedCountries.reduce((acc, res) => {
+          let test = this.getChartData("Other", acc.y + res.y);
+          return test;
+        })
+      );
+    }
     this.chartOptions.series = [{ data: chartData }];
 
     this.update = true;

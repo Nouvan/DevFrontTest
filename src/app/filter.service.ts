@@ -9,7 +9,7 @@ import * as _ from "lodash";
 })
 export class FilterService {
   private geonamesAPI =
-    "http://api.geonames.org/countryInfoJSON?formatted=true&username=hydrane";
+    "https://secure.geonames.org/countryInfoJSON?formatted=true&username=hydrane";
 
   public continentsList = [];
   private allCountries;
