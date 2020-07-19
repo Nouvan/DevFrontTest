@@ -23,7 +23,7 @@ export class AppComponent {
   ngOnInit() {}
 
   public initFilters() {
-    this.filterService.getCountryInfos(this.filters).subscribe((data) => {
+    this.filterService.getCountryInfos().subscribe((data) => {
       this.countries = data.geonames;
       this.filterService.setContinentList(this.countries);
       this.disabled = false;
@@ -31,12 +31,19 @@ export class AppComponent {
   }
 
   /**
-   *
+   * Update for the metric and max result number filter.
    */
   public updateFilters(filters: Filter) {
     this.filters = filters;
-    this.filterService.getCountryInfos(this.filters).subscribe((data) => {
-      console.log(data);
-    });
+  }
+
+  /**
+   *
+   */
+  public getCountriesByContinent(filters: Filter) {
+    this.filters = filters;
+    this.countries = this.filterService.getCountriesByContinent(
+      this.filters.continent
+    );
   }
 }

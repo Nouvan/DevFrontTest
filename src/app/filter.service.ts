@@ -12,14 +12,20 @@ export class FilterService {
     "http://api.geonames.org/countryInfoJSON?formatted=true&username=hydrane";
 
   public continentsList = [];
+  private allCountries;
 
   constructor(private http: HttpClient) {}
 
-  getCountryInfos(filter: Filter): Observable<any> {
+  getCountryInfos(): Observable<any> {
     return this.http.get<any>(this.geonamesAPI);
   }
 
+  getCountriesByContinent(continent: string) {
+    return _.filter(this.allCountries, { continent: continent });
+  }
+
   setContinentList(countriesList) {
+    this.allCountries = countriesList;
     this.continentsList = _(countriesList)
       .map((country) => {
         return {

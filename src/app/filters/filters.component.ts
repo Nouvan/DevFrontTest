@@ -10,6 +10,7 @@ import { Filter } from "./filters.interface";
 export class FiltersComponent implements OnInit {
   @Input() disabled;
   @Output() onChanges: EventEmitter<Filter> = new EventEmitter();
+  @Output() selectedContinent: EventEmitter<Filter> = new EventEmitter();
 
   public _filters: Filter = {
     continent: "ALL",
@@ -45,9 +46,13 @@ export class FiltersComponent implements OnInit {
   ngOnInit() {}
 
   /**
-   * Emit on any filters changes
+   * Emit on metric or max result filters changes
    */
   public onFilterChange() {
     this.onChanges.emit(this.filters);
+  }
+
+  onContinentChange() {
+    this.selectedContinent.emit(this.filters);
   }
 }

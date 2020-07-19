@@ -21,10 +21,20 @@ export class DonutComponent implements OnInit {
     this.setChartData(this._countries);
   }
 
-  @Input() filters: Filter;
+  public _resultNB: number;
+  @Input()
+  set resultNB(resultNB) {
+    console.log(resultNB);
+    this._resultNB = resultNB;
+    this.setChartData(this._countries);
+  }
+  get resultNB() {
+    return this._resultNB;
+  }
+
   @Input() type: string;
   @Input() title: string;
-  @Input() resultNB: number;
+
   highcharts = Highcharts;
 
   public update: boolean = false;
