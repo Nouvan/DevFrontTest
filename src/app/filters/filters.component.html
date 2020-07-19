@@ -1,1 +1,46 @@
-<p>filters works!</p>
+<div class="row">
+  <div class="col">
+    <mat-form-field appearance="fill">
+      <mat-label>Select a continent</mat-label>
+      <mat-select
+        [(value)]="filters.continent"
+        (selectionChange)="onFilterChange()"
+      >
+        <mat-option value="ALL">All</mat-option>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2">Option 2</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="fill">
+      <mat-label>Select a metric</mat-label>
+      <mat-select
+        [(value)]="filters.metric"
+        (selectionChange)="onFilterChange()"
+      >
+        <mat-option
+          *ngFor="let metric of metricFilterValues"
+          [value]="metric.value"
+          >{{ metric.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col">
+    <mat-form-field appearance="fill">
+      <mat-label>Select max result number</mat-label>
+      <mat-select
+        [(value)]="filters.resultsNB"
+        (selectionChange)="onFilterChange()"
+      >
+        <mat-option
+          *ngFor="let resultsNB of maxResultNBValues"
+          [value]="resultsNB"
+          >{{ resultsNB }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
