@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter } from "@angular/core";
+import { FilterService } from "../filter.service";
 import { Filter } from "./filters.interface";
 
 @Component({
@@ -39,7 +40,7 @@ export class FiltersComponent implements OnInit {
 
   public maxResultNBValues = [5, 10, 15, 20];
 
-  constructor() {}
+  constructor(public filterService: FilterService) {}
 
   ngOnInit() {}
 
