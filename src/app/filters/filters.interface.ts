@@ -1,5 +1,5 @@
 export interface Filter {
-  continent: string;
+  continent: string[];
   metric: string;
   resultsNB: number;
 }

@@ -6,6 +6,7 @@
         [disabled]="disabled"
         [(value)]="filters.continent"
         (selectionChange)="onContinentChange()"
+        multiple
       >
         <mat-option value="ALL">All</mat-option>
         <mat-option

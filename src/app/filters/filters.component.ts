@@ -13,7 +13,7 @@ export class FiltersComponent implements OnInit {
   @Output() selectedContinent: EventEmitter<Filter> = new EventEmitter();
 
   public _filters: Filter = {
-    continent: "ALL",
+    continent: ["ALL"],
     metric: "ALL",
     resultsNB: 5,
   };

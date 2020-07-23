@@ -20,9 +20,11 @@ export class FilterService {
     return this.http.get<any>(this.geonamesAPI);
   }
 
-  getCountriesByContinent(continent: string) {
-    if (continent === "ALL") return this.allCountries;
-    return _.filter(this.allCountries, { continent: continent });
+  getCountriesByContinent(continent: string[]) {
+    if (continent.indexOf("ALL") > -1) return this.allCountries;
+    return _.filter(this.allCountries, (c) => {
+      return continent.indexOf(c.continent) > -1;
+    });
   }
 
   setContinentList(countriesList) {
